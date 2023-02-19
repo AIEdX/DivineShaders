@@ -1,0 +1,32 @@
+{
+    "sources": [
+      {
+        "dir": "D:/DSSoftware/DSLIBS/divineShaders/dist",
+        "fileExtensions": [
+          "js","d.ts"
+        ],
+        "id": "dae"
+      }
+    ],
+    "outputs": [
+      {
+        "dir": "D:/DSSoftware/DSLIBS/divineShaders/testing/app/code",
+        "sourceID": "dae",
+        "codeSection": "all",
+        "keepComments": true
+      },
+      {
+        "dir": "D:/DSSoftware/DSLIBS/divineShaders/testing/code",
+        "sourceID": "dae",
+        "codeSection": "all",
+        "keepComments": true
+      }
+    ],
+    "codeSections": {
+      "all": {
+        "start": "@ds",
+        "end": "@ds"
+      }
+    }
+  }
+  

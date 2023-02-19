@@ -1,0 +1,61 @@
+{
+  "version": "2.0.0",
+  "presentation": {
+    "echo": false,
+    "reveal": "always",
+    "focus": false,
+    "panel": "dedicated",
+    "showReuseMessage": true
+  },
+  "tasks": [
+    {
+      "label": "Project Startup",
+      "dependsOn": [
+        "electron",
+        "backend-compile",
+        "src-compile",
+        "example-compile",
+        "dsst-src"
+      ],
+      // Mark as the default build task so cmd/ctrl+shift+b will create them
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      // Try start the task on folder open
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "electron",
+      "type": "shell",
+      "command": "cd electron; npm run start",
+      "isBackground": true
+    },
+    {
+      "label": "backend-compile",
+      "type": "shell",
+      "command": "cd electron/backend-src; tsc --watch",
+      "isBackground": true
+    },
+    {
+      "label": "src-compile",
+      "type": "shell",
+      "command": "cd src; tsc --watch",
+      "isBackground": true
+    },
+    {
+      "label": "example-compile",
+      "type": "shell",
+      "command": "cd electron/examples; tsc --watch",
+      "isBackground": true
+    },
+    {
+      "label": "dsst-src",
+      "type": "shell",
+      "command": "dsst -c .srcdsconfig -a",
+      "isBackground": true
+    },
+  ]
+}
